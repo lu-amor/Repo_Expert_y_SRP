@@ -4,7 +4,6 @@ namespace SRP
 {
     public class Book
     {
-
         public string Title { get ; }
         public string Author { get ; }
         public string Code { get ;  }
@@ -23,6 +22,5 @@ namespace SRP
             this.LibrarySector = sector;
             this.LibraryShelve = shelve;
         }
-
     }
 }
