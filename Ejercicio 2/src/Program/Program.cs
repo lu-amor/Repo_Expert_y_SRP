@@ -7,11 +7,16 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            string appointmentResult = AppointmentService.CreateAppointment("Steven Jhonson", "986782342", "5555-555-555", DateTime.Now, "Wall Street", "Armand");
+            Pacientes StevenJohnson = new Paciente("Steven Jhonson", "986782342", 37, "5555-555-555");
+            Médicos Armand = new Médicos("Armand", "Fisiólogo");
+            string appointmentResult = AppointmentService.CreateAppointment(StevenJohnson, DateTime.Now, "Wall Street", Armand);
             Console.WriteLine(appointmentResult);
 
-            string appointmentResult2 = AppointmentService.CreateAppointment("Ralf Manson", "", "5555-555-555", DateTime.Now, "Queen Street", "");
+            Pacientes RalfManson = new Pacientes("Ralph Manson", "984563217", 45, "095674464");
+            Médicos Peralta = new Médicos("Peralta", "Médico general");
+            string appointmentResult2 = AppointmentService.CreateAppointment(RalfManson, DateTime.Now, "Queen Street", Peralta);
             Console.WriteLine(appointmentResult2);
         }
     }
 }
+//se debería pedir solo nombre, nombre del médico, hora y lugar

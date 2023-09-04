@@ -5,39 +5,27 @@ namespace Library
 {
     public class AppointmentService
     {
-        public static string CreateAppointment(string name, string id, string phoneNumber, DateTime date, string appoinmentPlace, string doctorName)
+        public string MName;
+        public static string CreateAppointment(Pacientes pacientes, DateTime date, string appoinmentPlace, Médicos Médicos)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
             Boolean isValid = true;
 
-            if (string.IsNullOrEmpty(name))
+            if (!IdUtils.IdIsValid(Pacientes.GetId()))
             {
-                stringBuilder.Append("Unable to schedule appointment, 'name' is required\n");
-                isValid = false;
-            }
-
-            if (string.IsNullOrEmpty(id))
-            {
-                stringBuilder.Append("Unable to schedule appointment, 'id' is required\n");
-                isValid = false;
-            }
-
-            if (string.IsNullOrEmpty(phoneNumber))
-            {
-                stringBuilder.Append("Unable to schedule appointment, 'phone number' is required\n");
+                stringBuilder.Append("Unable to schedule appointment, valid 'id' is required\n");
                 isValid = false;
             }
 
             if (string.IsNullOrEmpty(appoinmentPlace))
             {
-                stringBuilder.Append("Unable to schedule appointment, 'appoinment place' is required\n");
+                stringBuilder.Append("Unable to schedule appointment, valid 'appoinment place' is required\n");
                 isValid = false;
             }
 
-
-            if (string.IsNullOrEmpty(doctorName))
+            if (string.IsNullOrEmpty(MName.Get()))
             {
-                stringBuilder.Append("Unable to schedule appointment, 'doctor name' is required\n");
+                stringBuilder.Append("Unable to schedule appointment, valid 'doctor name' is required\n");
                 isValid = false;
             }
 
@@ -51,3 +39,8 @@ namespace Library
 
     }
 }
+/*
+la información de los pacientes debería almacenarse toda junta
+la información de los médicos debería almacenarse toda junta
+*/
+
