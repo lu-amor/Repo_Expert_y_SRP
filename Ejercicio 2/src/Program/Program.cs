@@ -7,7 +7,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Pacientes StevenJohnson = new Paciente("Steven Jhonson", "986782342", 37, "5555-555-555");
+            Pacientes StevenJohnson = new Pacientes("Steven Jhonson", "54316734", 37, "5555-555-555");
             Médicos Armand = new Médicos("Armand", "Fisiólogo");
             string appointmentResult = AppointmentService.CreateAppointment(StevenJohnson, DateTime.Now, "Wall Street", Armand);
             Console.WriteLine(appointmentResult);

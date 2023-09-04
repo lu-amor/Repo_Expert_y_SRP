@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 namespace Library
 {
@@ -13,7 +14,7 @@ namespace Library
 
             if (id.Length == 8 && long.TryParse(id, out tempOut))
             {
-                var idAsCharArray = id.ToArray();
+                var idAsCharArray = id.ToCharArray().ToArray();
                 var idAsIntArray = idAsCharArray.Select(c => int.Parse(c.ToString())).ToArray();
                 var referenceArray = "2987634".ToArray().Select(c => int.Parse(c.ToString())).ToArray();
                 var inputCheckDigit = idAsIntArray[7];

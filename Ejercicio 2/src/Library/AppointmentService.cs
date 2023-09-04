@@ -11,7 +11,7 @@ namespace Library
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
             Boolean isValid = true;
 
-            if (!IdUtils.IdIsValid(Pacientes.GetId()))
+            if (!IdUtils.IdIsValid(pacientes.GetId()))
             {
                 stringBuilder.Append("Unable to schedule appointment, valid 'id' is required\n");
                 isValid = false;
@@ -23,7 +23,7 @@ namespace Library
                 isValid = false;
             }
 
-            if (string.IsNullOrEmpty(MName.Get()))
+            if (string.IsNullOrEmpty(Médicos.MName))
             {
                 stringBuilder.Append("Unable to schedule appointment, valid 'doctor name' is required\n");
                 isValid = false;
